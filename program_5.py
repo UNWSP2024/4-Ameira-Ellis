@@ -12,7 +12,23 @@ def main():
     total = 0.0
 
     ######################
-    # WRITE YOUR CODE HERE
+    budget = float(input("Enter your monthly budget: $"))
+    total_expenses = 0
+    while True:
+        expense_input = input("Enter an expense amount (or type 'done' to finish): ")
+        if expense_input.lower() == 'done':
+            break
+        expense = float(expense_input)
+        total_expenses += expense
+    difference = budget - total_expenses
+
+    print("Monthly Budget Analysis:")
+    if difference > 0:
+        print(f"You are under budget by: ${difference:.2f}")    
+    elif difference < 0:
+        print(f"You are over budget by: ${-difference:.2f}")
+    else:
+        print("You met your budget exactly.")
     ######################
 
 
